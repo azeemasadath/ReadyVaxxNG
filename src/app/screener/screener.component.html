@@ -1,0 +1,48 @@
+<!-- Questions related to book the vaccine.  -->
+<form [formGroup]="screenerForm">
+<br>
+<div style="width: 800px; margin: 0 auto">
+  <h1>Tell us what you need</h1>
+
+  <p>
+    Tell us if you need to start vaccination, or if you only need to schedule a
+    second dose because you've already received the first dose somewhere else.
+  </p>
+
+  <p>What do you need? ( *Required )</p>
+
+  <!-- <input
+    type="radio"
+    id="I need to start vaccination."
+    name="First/second dose"
+  />
+   
+  <label for="I need to start vaccination.">I need to start vaccination.</label
+  ><br />
+  <input
+    type="radio"
+    id="I only need to schedule a second dose."
+    name="First/second dose"
+  />
+   
+  <label for="I only need to schedule a second dose."
+    >I only need to schedule a second dose.</label
+  >
+  <br> -->
+
+ <div class="form-group">
+  <!-- <label class="col-md-2 control-label">Contact Preference</label> -->
+  <div >
+      <label >
+          <input type="radio" value="phone" formControlName="contactPreference">I need to start vaccination.
+      </label>
+      <label >
+          <input type="radio" value="email" formControlName="contactPreference">I only need to schedule a second dose.
+      </label>
+  </div>
+</div>
+  <button id="continueButton" class="btn btn-danger" style="width: 300px; height: 40px" [routerLink]="['/screener-2']">
+    Continue Scheduling
+  </button>
+</div>
+</form>

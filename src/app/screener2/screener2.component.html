@@ -1,0 +1,117 @@
+
+
+<!-- Questions related to book the vaccine.  -->
+
+<div style="width: 800px; margin: 0 auto">
+
+  <h1>You are almost done</h1>
+
+  
+  <p>Select the kind of vaccine. ( *Required )</p>
+  
+  <input
+    type="radio"
+    id="Covid-19 vaccine"
+    name="Vaccine kind"
+    required="required"
+  />
+
+   
+  <label for="Covid-19 vaccine">Covid-19 vaccine</label
+  
+  ><br />
+  <input
+    type="radio"
+    id="Rabies vaccine"
+    name="Vaccine kind"
+  />
+   
+  <label for="Rabies vaccine"
+    >Rabies vaccine</label
+  >
+  <br>
+<input
+    type="radio"
+    id="Influenza vaccine"
+    name="Vaccine kind"
+  />
+   
+  <label for="Influenza vaccine"
+    >Influenza vaccine</label
+  >
+<br>
+<br>
+
+<p>Select the Medical Facility. ( *Required )</p>
+
+  <input
+    type="radio"
+    id="Burbank Dr"
+    name="Facility location"
+    required="required"
+  />
+   
+  <label for="Burbank Dr">Burbank Dr</label
+  ><br />
+  <input
+    type="radio"
+    id="Siegen Ln"
+    name="Facility location"
+  />
+   
+  <label for="Siegen Ln"
+    >Siegen Ln</label
+  >
+  <br>
+<input
+    type="radio"
+    id="Sherwood Blvd"
+    name="Facility location"
+  />
+   
+  <label for="Sherwood Blvd"
+    >Sherwood Blvd</label
+  >
+<br>
+<label for="Date"><b></b></label>
+<p>Enter the Date to be vaccinated on. ( *Required )</p>
+  <input type="text" placeholder="MM/DD/YYYY" name="Date" required="required">
+  <br>
+
+  <p>(07/29/2021;08/05/2021;06/05/2021 are not available to book for an appointment.)</p>
+  <br>
+
+  <p>Enter the time to be vaccinated at. ( *Required )</p>
+  <input type="text" placeholder="00:00 AM/PM" name="time" required="required">
+  <p>(Call the facility prior your appointment date to avoid waiting time.)</p>
+  <br>
+
+
+  <button id="submitButton" class="btn btn-danger" style="width: 300px; height: 40px" [routerLink]="['/final-page']">
+    submit
+  </button>
+  <br>
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<div id="result"></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+

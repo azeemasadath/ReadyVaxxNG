@@ -1,0 +1,38 @@
+<form [formGroup]="employeeForm">
+<div class="container">
+  <div class="form-group" [ngClass]="{'has-error' : formErrors.fullName}">
+    <label for="uname"><b>Email/Mobile number</b></label>
+  <input type="text" formControlName="fullName" (blur)="logValidationErrors()" placeholder="Enter Email/Mobile number" name="uname" required>
+  <span class="help-block text-danger" *ngIf="formErrors.fullName">
+    {{formErrors.fullName}}
+</span>
+</div>
+
+<div class="form-group" [ngClass]="{'has-error' : formErrors.password}">
+  <label for="password"><b>Password</b></label>
+<input type="password" formControlName="password" (blur)="logValidationErrors()" placeholder="Enter Password" name="password" required>
+<span class="help-block text-danger" *ngIf="formErrors.password">
+  {{formErrors.password}}
+</span>
+</div>
+
+  <!-- <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required> -->
+
+  <button [disabled]="employeeForm.invalid" type="submit" [routerLink]="['/screener']">Login
+  </button>
+  <label>
+    <input type="checkbox" name="remember"> Remember me
+  </label>
+  
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+  <!--<button type="button" class="cancelbtn">cancel</button>-->
+  <span>Don't have an account? <a href="register">create new account</a> </span>
+
+  <!--<span class="psw"> <a href="#">Forgot password?</a></span>-->
+
+</div>
+
+</form>

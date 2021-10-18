@@ -1,0 +1,23 @@
+<div class="container">
+  <label for="Fname"><b>Firstname</b></label>
+  <input type="text" placeholder="Firstname" name="Fname" required>
+
+  <label for="Lname"><b>Lastname</b></label>
+  <input type="text" placeholder="Lastname" name="Lname" required>
+
+  <label for="Email/Mobile"><b>Email/Mobile number</b></label>
+  <input type="text" placeholder="Enter Email/Mobile number" name="Email/Mobile" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="psw" required>
+
+
+  <button type="submit" [routerLink]="['/screener']">Sign up
+  </button>
+  <label>
+    <input type="checkbox" name="remember"> Remember me
+  </label>
+</div>
+<div class="container" style="background-color:#f1f1f1">
+<span >Already have an account? <a href="login">Login here</a> </span>
+</div>

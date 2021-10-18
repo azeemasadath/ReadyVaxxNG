@@ -1,0 +1,64 @@
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="card" style="width: 60rem;">
+        <div class="card-header">
+            <h3 class="card-title">{{pageTitle}}</h3>
+        </div>
+
+        <div class="card-body">
+            <div class="form-group" [ngClass]="{'has-error' : formErrors.fullName}">
+                <label class="col-sm-2 control-label" for="fullName">*Full Name</label>
+                <div class="col-sm-8">
+                    <input id="fullName" formControlName="fullName" (blur)="logValidationErrors()" type="text"
+                        class="form-control">
+                    <span class="form-text" *ngIf="formErrors.fullName">
+                        {{formErrors.fullName}}
+                    </span>
+                </div>
+            </div>
+
+            <div formGroupName="emailGroup">
+                <div class="form-group" [ngClass]="{'has-error' : formErrors.email}">
+                    <label class="col-sm-2 control-label" for="email">*Email</label>
+                    <div class="col-sm-8">
+                        <input id="email" (blur)="logValidationErrors()" formControlName="email" type="text"
+                            class="form-control">
+                        <span class="form-text" *ngIf="formErrors.email">
+                            {{formErrors.email}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error' : formErrors.confirmEmail || formErrors.emailGroup}">
+                    <label class="col-sm-2 control-label" for="confirmEmail">*Confirm Email</label>
+                    <div class="col-sm-8">
+                        <input id="confirmEmail" (blur)="logValidationErrors()" formControlName="confirmEmail"
+                            type="text" class="form-control">
+                        <span class="form-text" *ngIf="formErrors.confirmEmail || formErrors.emailGroup">
+                            {{formErrors.confirmEmail ? formErrors.confirmEmail : formErrors.emailGroup}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error' : formErrors.phone}">
+                <label class="col-sm-2 control-label" for="phone" >Phone</label>
+                <div class="col-sm-8">
+                    <input id="phone" (blur)="logValidationErrors()" formControlName="phone" type="text"
+                        class="form-control">
+                    <span class="form-text" *ngIf="formErrors.phone">
+                        {{formErrors.phone}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="btn-toolbar">
+                <button class="btn btn-primary" [disabled]="employeeForm.invalid" type="submit">Save</button>
+               
+            </div>
+        </div>
+
+    </div>
+
+</form>
